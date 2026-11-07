@@ -105,31 +105,67 @@ fonction dans un registre, des paramètres dans d'autres registres, un
 `TRAP` pour basculer en mode superviseur, un code de retour dans `D0`.
 C'est le même modèle mental que `I$Read`, `I$Write`, etc. sous OS-9.
 
+---
+
+## Extension mémoire 4 Mo : indispensable pour les programmes « 5m »
+
+Les programmes suffixés `5m` (ex. `mbasic_rosco5m.bin`, `mini-edit5m.bin`,
+`busy5m.bin`) **exigent l'extension mémoire 4 Mo** (carte d'extension RAM
+officielle pour ROSCO_M68K).
+
+Sans cette extension :
+
+- Les programmes `5m` **ne peuvent pas être chargés** : ils sont linkés à
+  `0x200000`, adresse qui n'existe pas sur une carte sans extension RAM.
+- Il faut utiliser les versions **1 Mo** (sans suffixe), linkées à `0x080000`,
+  qui fonctionnent sur toute ROSCO_M68K Classic v2.42.
+
+### Recommandation
+
+L'extension mémoire 4 Mo est **vivement conseillée** pour bénéficier
+pleinement des programmes :
+
+| Programme | Version 1 Mo (sans extension) | Version 5 Mo (avec extension 4 Mo) |
+|---|---|---|
+| **mbasic** | Mêmes fonctionnalités, mais **limité** en nombre de lignes, taille des tableaux et nombre de variables | Mêmes fonctionnalités, **sans ces limitations** (LFN 255, SAVE > 8 Ko, tableaux et variables étendus) |
+| **mini-edit** | Fonctionnel | Fonctionnel, avec plus de mémoire de travail |
+| **busy** | Fonctionnel | Fonctionnel |
+
+> En résumé : les versions `5m` ne sont pas « une autre version » du
+> programme, ce sont **les mêmes programmes** avec accès à la mémoire
+> étendue. Le BASIC 1 Mo et le BASIC 5 Mo partagent le même code ; seule
+> la capacité mémoire allouée change.
+
+
+---
+
 
 ## Programmes disponibles
 
-| Programme | Taille | Description |
-|---|---|---|
-| `mbasic/mbasic_rosco.bin` | 91.860 ko | BASIC V4.0 (version 1 Mo, foreground) |
-| `mbasic/mbasic_rosco5m.bin` | 91.860 ko | BASIC V4.0 (version 5 Mo, background) |
-| `demos/hello.bin` | 1.286 ko | Exemple « Hello World » |
-| `demos/guess.bin` | 1.520 ko | Jeu de devinette |
-| `tools/mini-edit.bin` | 7.924 ko | Éditeur de texte (version 1 Mo) |
-| `tools/mini-edit5m.bin` | 7.924 ko | Éditeur de texte (version 5 Mo) |
-| `demos/busy.bin` | 0.758 ko | Test de préemption CPU (version 1 Mo) |
-| `demos/busy5m.bin` | 0.758 ko | Test de préemption CPU (version 5 Mo) |
+| Programme | Taille | Extension 4 Mo | Description |
+|---|---|---|---|
+| `mbasic/mbasic_rosco.bin` | 91.860 ko | Non | BASIC V4.0 (version 1 Mo, foreground) |
+| `mbasic/mbasic_rosco5m.bin` | 91.860 Ko | **Oui** | BASIC V4.0 (version 5 Mo, background) |
+| `demos/hello.bin` | 1.286 ko | Non | Exemple « Hello World » |
+| `demos/guess.bin` | 1.520 ko | Non | Jeu de devinette |
+| `tools/mini-edit.bin` | 0.7924 ko | Non | Éditeur de texte (version 1 Mo) |
+| `tools/mini-edit5m.bin` | 0.7924 ko | **Oui** | Éditeur de texte (version 5 Mo) |
+| `demos/busy.bin` | 0.758 ko | Non | Test de préemption CPU (version 1 Mo) |
+| `demos/busy5m.bin` | 0.758 ko | **Oui** | Test de préemption CPU (version 5 Mo) |
 
-### Versions « 1Mo » vs « 5Mo »
+### Versions « 1 Mo » vs « 5 Mo »
 
 Les programmes existent en deux versions :
 
 - **Version 1 Mo** (sans suffixe) : linkée à `0x080000`, chargée en
-  **foreground** via `run nom.bin`.
+  **foreground** via `run nom.bin`. Fonctionne sur **toute** ROSCO_M68K
+  Classic v2.42, sans extension mémoire.
 - **Version 5 Mo** (suffixe `5m`) : linkée à `0x200000`, chargée en
-  **background** via `run nom5m.bin &`.
+  **background** via `run nom5m.bin &`. **Exige l'extension mémoire 4 Mo**
+  (carte d'extension RAM officielle). Sans elle, le chargement échoue.
 
-> **Limitation connue** : le mode background n'est supporté que pour les
-> versions `5m`. Les versions 1 Mo ne peuvent pas être lancées avec `&`.
+> **Limitation connue** : le mode background (`&`) n'est supporté que pour
+> les versions `5m`. Les versions 1 Mo ne peuvent pas être lancées avec `&`.
 
 ---
 
@@ -169,6 +205,10 @@ text
 - Noms de fichiers longs (LFN 255 caractères)
 - `SAVE` de programmes > 8 Ko
 - Validé : MEGATEST 36/36, REGTEST 34/34
+- **Deux versions** : `mbasic_rosco.bin` (1 Mo, sans extension RAM) et
+  `mbasic_rosco5m.bin` (5 Mo, avec extension 4 Mo). Le code est identique ;
+  la version 1 Mo est limitée en nombre de lignes, taille des tableaux et
+  nombre de variables.
 
 ### mini-edit — éditeur de texte
 
@@ -197,6 +237,10 @@ ne pas les charger à une autre adresse.
   OS-9 (fichiers `.mod`), le format de système de fichiers RBF, ni la
   préemption IRQ complète. Le multitâche est coopératif, pas préemptif.
   Voir la feuille de route pour les chantiers ouverts.
+  - **Extension 4 Mo requise** pour tous les binaires `5m` (versions 1 Mo
+  disponibles pour les cartes sans extension).
+- **BASIC 1 Mo** : mêmes fonctionnalités que le 5 Mo, mais limité en nombre
+  de lignes, taille des tableaux et nombre de variables.
   
 ---
 
