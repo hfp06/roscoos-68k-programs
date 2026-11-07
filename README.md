@@ -107,7 +107,9 @@ Les programmes existent en deux versions :
 ---
 
 ## Utilisation depuis le shell roscoOS
-
+ 
+NE PAS OUBLIER DE METTRE A JOUR LES 2 ROMs
+ 
 1. Copier les binaires sur la carte (carte SD ou transfert série, selon votre
    configuration).
 2. Depuis le shell roscoOS, lancer un programme en foreground :
