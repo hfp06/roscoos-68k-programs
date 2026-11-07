@@ -92,7 +92,7 @@ La mise à jour des ROMs est la clé de voûte du projet. Elle transforme la ROS
 | `demos/busy.bin` | 0.758 ko | Test de préemption CPU (version 1 Mo) |
 | `demos/busy5m.bin` | 0.758 ko | Test de préemption CPU (version 5 Mo) |
 
-### Versions « 1 Mo » vs « 5 Mo »
+### Versions « 1Mo » vs « 5Mo »
 
 Les programmes existent en deux versions :
 
