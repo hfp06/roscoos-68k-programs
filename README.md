@@ -136,9 +136,7 @@ pleinement des programmes :
 > étendue. Le BASIC 1 Mo et le BASIC 5 Mo partagent le même code ; seule
 > la capacité mémoire allouée change.
 
-
 ---
-
 
 ## Programmes disponibles
 
