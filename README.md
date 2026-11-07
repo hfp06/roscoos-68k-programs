@@ -83,14 +83,14 @@ La mise à jour des ROMs est la clé de voûte du projet. Elle transforme la ROS
 
 | Programme | Taille | Description |
 |---|---|---|
-| `mbasic/mbasic_rosco.bin` | 91860 o | BASIC V4.0 (version 1 Mo, foreground) |
-| `mbasic/mbasic_rosco5m.bin` | 91860 o | BASIC V4.0 (version 5 Mo, background) |
-| `demos/hello.bin` | 1286 o | Exemple « Hello World » |
-| `demos/guess.bin` | 1520 o | Jeu de devinette |
-| `tools/mini-edit.bin` | 7924 o | Éditeur de texte (version 1 Mo) |
-| `tools/mini-edit5m.bin` | 7924 o | Éditeur de texte (version 5 Mo) |
-| `demos/busy.bin` | 758 o | Test de préemption CPU (version 1 Mo) |
-| `demos/busy5m.bin` | 758 o | Test de préemption CPU (version 5 Mo) |
+| `mbasic/mbasic_rosco.bin` | 91.860 ko | BASIC V4.0 (version 1 Mo, foreground) |
+| `mbasic/mbasic_rosco5m.bin` | 91.860 ko | BASIC V4.0 (version 5 Mo, background) |
+| `demos/hello.bin` | 1.286 ko | Exemple « Hello World » |
+| `demos/guess.bin` | 1.520 ko | Jeu de devinette |
+| `tools/mini-edit.bin` | 7.924 ko | Éditeur de texte (version 1 Mo) |
+| `tools/mini-edit5m.bin` | 7.924 ko | Éditeur de texte (version 5 Mo) |
+| `demos/busy.bin` | 0.758 ko | Test de préemption CPU (version 1 Mo) |
+| `demos/busy5m.bin` | 0.758 ko | Test de préemption CPU (version 5 Mo) |
 
 ### Versions « 1 Mo » vs « 5 Mo »
 
