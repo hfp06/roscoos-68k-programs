@@ -1,20 +1,44 @@
 # roscoOS/68k — Programmes natifs (binaires)
 
 Programmes natifs prêts à l'emploi pour **roscoOS/68k**, l'OS maison pour la carte
-**ROSCO_M68K Classic v2.42** (MC68010 @ 10/12 MHz).
+**ROSCO_M68K Classic v2.42** (MC68010 @ 10 ou 12 MHz).
 
 Ce dépôt ne contient **que les binaires** (`.bin`) des programmes. Le noyau
 roscoOS et les sources ne sont pas publiés ici.
 
 ---
 
+## Philosophie du projet
+
+roscoOS/68k est conçu pour se rapprocher le plus possible d'**OS-9**
+(l'OS temps réel de Microware, référence sur 6809 puis 68000), tout en
+restant adapté au matériel de la ROSCO_M68K Classic v2.42.
+
+L'objectif n'est pas de cloner OS-9 ligne par ligne, mais d'en retrouver
+l'esprit :
+
+- **Multitâche coopératif** avec ordonnancement simple et prévisible
+- **Appels système stables** via `TRAP`, à la manière des I/O d'OS-9
+- **Shell natif** avec commandes `run`, gestion de fichiers, redirections
+- **Programmes binaires position-indépendants ou liés à adresse fixe**,
+  chargeables en foreground ou background
+- **Accès unifié aux périphériques** (SD, série, console) depuis les
+  programmes utilisateurs, pas seulement depuis le shell
+
+Cette filiation OS-9 guide les choix d'architecture (TRAP #13, structure
+SD, gestion des tâches) et la feuille de route (TTY virtuel, multi-shell,
+préemption IRQ).
+
+---
+
 ## Contexte matériel
 
 - **Carte** : ROSCO_M68K Classic v2.42
-- **CPU** : Motorola MC68010 @ 10/12 MHz
+- **CPU** : Motorola MC68010 @ 10 ou 12 MHz
 - **OS** : roscoOS/68k (kernel v0.9.3 stable, multitâche coopératif)
 - **Shell** : shell natif roscoOS, commande `run` pour lancer les programmes
-
+- **Inspiration** : OS-9 (Microware) — multitâche, TRAP, shell natif
+  
 ---
 
 ## Prérequis
@@ -76,7 +100,10 @@ Fichiers sources : Les modifications sont documentées dans syscalls_asm.asm et 
 5. En résumé
 La mise à jour des ROMs est la clé de voûte du projet. Elle transforme la ROSCO_M68K d'une machine où la SD n'était accessible que par le shell en une plateforme ouverte où tout programme peut lire et écrire sur la carte SD. C'est ce qui a rendu possible le BASIC avec gestion de fichiers, et c'est ce qui ouvrira la porte à de futurs projets (OS, applications, etc.).
 
-
+Ces appels système s'inspirent directement des I/O d'OS-9 : un numéro de
+fonction dans un registre, des paramètres dans d'autres registres, un
+`TRAP` pour basculer en mode superviseur, un code de retour dans `D0`.
+C'est le même modèle mental que `I$Read`, `I$Write`, etc. sous OS-9.
 
 
 ## Programmes disponibles
@@ -166,6 +193,23 @@ devinette) pour découvrir le shell roscoOS.
 - Les binaires sont liés à des adresses fixes (`0x080000` ou `0x200000`) :
 ne pas les charger à une autre adresse.
 - Compatibilité limitée à roscoOS/68k sur ROSCO_M68K Classic v2.42.
+- **Par rapport à OS-9** : roscoOS/68k n'implémente pas encore les modules
+  OS-9 (fichiers `.mod`), le format de système de fichiers RBF, ni la
+  préemption IRQ complète. Le multitâche est coopératif, pas préemptif.
+  Voir la feuille de route pour les chantiers ouverts.
+  
+---
+
+## Feuille de route (chantiers ouverts)
+
+- Préemption IRQ (passage d'un multitâche coopératif à préemptif)
+- Gestionnaire de bus-error (robustesse mémoire)
+- TTY virtuel (plusieurs sessions)
+- Multi-shell
+- Polish du shell
+- Correction d'un bug mbasic mono-ligne complexe
+
+Ces chantiers rapprochent progressivement roscoOS/68k du modèle OS-9.
 
 ---
 
