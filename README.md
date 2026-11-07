@@ -8,6 +8,14 @@ roscoOS et les sources ne sont pas publiés ici.
 
 ---
 
+ **📦 Binaires en cours de publication**
+ Les fichiers `.bin` seront ajoutés au dépôt pas avant le **mercredi 11/11/2026 après-midi**.
+ En attendant, le README décrit l'ensemble des programmes, leurs prérequis
+ (extension mémoire 4 Mo pour les versions `5m`, mise à jour des 2 ROMs) et
+ leur utilisation depuis le shell roscoOS.
+
+---
+
 ## Philosophie du projet
 
 roscoOS/68k est conçu pour se rapprocher le plus possible d'**OS-9**
@@ -194,6 +202,13 @@ Les programmes existent en deux versions :
 
 > **Limitation connue** : le mode background (`&`) n'est supporté que pour
 > les versions `5m`. Les versions 1 Mo ne peuvent pas être lancées avec `&`.
+
+---
+
+## Retours et questions
+
+- **Issues** : pour signaler un bug ou poser une question précise
+- **Discussions** : pour échanger sur roscoOS/68k, OS-9, ou proposer des idées
 
 ---
 
