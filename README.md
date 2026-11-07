@@ -11,7 +11,7 @@ roscoOS et les sources ne sont pas publiés ici.
 ## Contexte matériel
 
 - **Carte** : ROSCO_M68K Classic v2.42
-- **CPU** : Motorola MC68010 @ 12 MHz
+- **CPU** : Motorola MC68010 @ 10/12 MHz
 - **OS** : roscoOS/68k (kernel v0.9.3 stable, multitâche coopératif)
 - **Shell** : shell natif roscoOS, commande `run` pour lancer les programmes
 
