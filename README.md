@@ -9,7 +9,7 @@ roscoOS et les sources ne sont pas publiés ici.
 ---
 
  **📦 Binaires en cours de publication**
- Les fichiers `.bin` seront ajoutés au dépôt pas avant le **mercredi 11/11/2026 après-midi**.
+ Les fichiers `.bin` sont ajoutés au dépôt.
  En attendant, le README décrit l'ensemble des programmes, leurs prérequis
  (extension mémoire 4 Mo pour les versions `5m`, mise à jour des 2 ROMs) et
  leur utilisation depuis le shell roscoOS.
