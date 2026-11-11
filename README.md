@@ -8,11 +8,20 @@ roscoOS et les sources ne sont pas publiés ici.
 
 ---
 
- **📦 Binaires en cours de publication**
- Les fichiers `.bin` sont ajoutés au dépôt.
- En attendant, le README décrit l'ensemble des programmes, leurs prérequis
- (extension mémoire 4 Mo pour les versions `5m`, mise à jour des 2 ROMs) et
- leur utilisation depuis le shell roscoOS.
+## 🚀 Quick Start (5 minutes)
+
+1. **Flasher les 2 ROMs** modifiées (`rosco_m68k_even.rom`, `rosco_m68k_odd.rom`)
+   — voir [Mise à jour des ROMs](#mise-à-jour-des-roms-firmware)
+2. **Copier les `.bin`** sur la carte SD (dossier racine)
+3. **Démarrer la ROSCO_M68K** et accéder au shell `roscoos / >`
+4. **Tester** : `run hello.bin`
+5. **Explorer** :
+   - `run mbasic_rosco5m.bin` — BASIC V4.0 (nécessite 4 Mo)
+   - `run mini-edit5m.bin` — Éditeur de texte
+   - `run guess.bin` — Jeu de devinette
+
+> ⚠️ **Sans les ROMs modifiées**, les programmes ne peuvent pas accéder à la SD.
+> ⚠️ **Les versions `5m`** nécessitent l'extension mémoire 4 Mo.
 
 ---
 
@@ -176,6 +185,24 @@ pleinement des programmes :
 
 ---
 
+## 📸 Aperçu
+
+### Shell roscoOS
+
+![roscoOS shell](roscoOS%201.png)
+![roscoOS dir](roscoOS%202.png)
+![roscoOS ps](roscoOS%203.png)
+
+### BASIC V4.0 (mbasic_rosco5m.bin)
+
+![BASIC banner](Basic%201.png)
+![BASIC programme](Basic%202.png)
+![BASIC resultat](Basic%203.png)
+
+---
+
+
+
 ## Programmes disponibles
 
 | Programme | Taille | Extension 4 Mo | Description |
@@ -220,3 +247,47 @@ Les programmes existent en deux versions :
 1. Copier les binaires sur la carte (carte SD ou transfert série, selon
    votre configuration).
 2. Depuis le shell roscoOS, lancer un programme en foreground :
+
+
+---
+
+## 🙏 Crédits
+
+- **ROSCO_M68K** — Xark et la communauté (https://github.com/rosco-m68k/rosco_m68k)
+- **FatFs** — ChaN (http://elm-chan.org/fsw/ff/)
+- **E-Kermit** — Columbia University
+- **m68k-linux-gnu-gcc-11** — équipe GCC
+- **Tera Term** — T. Teranishi
+
+Sans ces projets, roscoOS/68k n'existerait pas.
+
+## 📢 Politique de publication
+
+| Composant | Statut | Licence |
+|-----------|--------|---------|
+| **Programmes** (`.bin`) | ✅ Publiés | MIT |
+| **ROMs modifiées** | ✅ Publiées | Voir licence ROSCO_M68K |
+| **Screenshots** | ✅ Publiés | MIT |
+| **Sources du kernel** (`roscoos.bin`, `sched.c`, etc.) | ⏳ Non publiées | — |
+
+**Pourquoi les sources du kernel ne sont pas publiées ?**
+
+Le développement de roscoOS/68k est **actif et solo**. Publier les sources
+maintenant signifierait gérer une communauté (PRs, issues, forks) que je ne
+peux pas assumer en parallèle du développement.
+
+Les sources du kernel seront publiées dans une version future, **quand le
+projet sera stabilisé** (probablement en 1.0). En attendant, les binaires
+sont fournis **librement** (MIT) pour utilisation, test et modification.
+
+## 🎯 Feuille de route
+
+- [x] **Phase 1** — Multitâche coopératif (`sched_create`, `yield`, `sleep`, `kill`)
+- [ ] **Phase 2** — Préemption IRQ (recherche Motorola `rte` 68010 en cours)
+- [ ] **RTC DS3231** — I2C, pour TIME$/DATE$ persistantes
+- [ ] **Carte graphique** — En cours de conception
+- [ ] **Publication des sources du kernel** — v1.0
+
+## 📝 Changelog
+
+Voir [CHANGELOG.md](CHANGELOG.md) pour l'historique des versions.
