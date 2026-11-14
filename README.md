@@ -2,10 +2,12 @@
 
 # roscoOS/68k
 
-**Un système d'exploitation complet pour la carte rosco_m68k**
-**A complete operating system for the rosco_m68k board**
-
 </div>
+
+##Un système d'exploitation complet pour la carte rosco_m68k**
+##A complete operating system for the rosco_m68k board**
+
+
 
 Programmes natifs prêts à l'emploi pour **roscoOS/68k**, l'OS maison pour la carte
 **ROSCO_M68K Classic v2.42** (MC68010 @ 10 ou 12 MHz).
