@@ -5,13 +5,6 @@
 **Un système d'exploitation complet pour la carte rosco_m68k**
 **A complete operating system for the rosco_m68k board**
 
-![Phase 1](https://img.shields.io/badge/Phase%201-Multit%C3%A2che%20coop%C3%A9ratif-brightgreen)
-![Phase 2](https://img.shields.io/badge/Phase%202-Multit%C3%A2che%20pr%C3%A9emptif-yellow)
-![License](https://img.shields.io/badge/License-MIT%20(binaires%20uniquement)-blue)
-![Platform](https://img.shields.io/badge/Platform-Motorola%2068000-orange)
-
-[Français](#-français) · [English](#-english) · [Démo vidéo](#-démonstration) · [FAQ](FAQ.md)
-
 </div>
 
 Programmes natifs prêts à l'emploi pour **roscoOS/68k**, l'OS maison pour la carte
@@ -66,7 +59,7 @@ préemption IRQ).
 
 - **Carte** : ROSCO_M68K Classic v2.42
 - **CPU** : Motorola MC68010 @ 10 ou 12 MHz
-- **OS** : roscoOS/68k (kernel v0.9.3 stable, multitâche coopératif)
+- **OS** : roscoOS/68k (kernel v0.9.4 stable, multitâche coopératif)
 - **Shell** : shell natif roscoOS, commande `run` pour lancer les programmes
 - **Inspiration** : OS-9 (Microware) — multitâche, TRAP, shell natif
 
@@ -86,11 +79,11 @@ préemption IRQ).
 
 ## 🎬 Démonstration vidéo (7 min)
 
-[![Présentation roscoOS/68k](roscoOS%201.png)](https://github.com/hfp06/roscoos-68k-programs/releases/download/v0.9.7-video/RoscoOS-Basic.mp4)
+[![Présentation roscoOS/68k](roscoOS%201.png)](https://github.com/hfp06/roscoOS-68k/releases/download/v0.9.7-video/RoscoOS-Basic.mp4)
 
 *Cliquez sur l'image pour télécharger et lancer la vidéo (MP4, 15 Mo).*
 
-⬇️ **[Télécharger la vidéo (MP4, 15 Mo)](https://github.com/hfp06/roscoos-68k-programs/releases/download/v0.9.7-video/RoscoOS-Basic.mp4)**
+⬇️ **[Télécharger la vidéo (MP4, 15 Mo)](https://github.com/hfp06/roscoOS-68k/releases/download/v0.9.7-video/RoscoOS-Basic.mp4)**
 
 ---
 
@@ -329,7 +322,7 @@ Sur la carte **rosco_m68k** (processeur Motorola 68000), avec 4 Mo de RAM et l'e
 
 ### Comment signaler un bug ou proposer une amélioration ?
 
-Ouvrez une [issue](https://github.com/hfp06/roscoos-68k-programs/issues) sur ce dépôt. Les retours d'expérience sont précieux pour faire avancer le projet.
+Ouvrez une [issue](https://github.com/hfp06/roscoOS-68k/issues) sur ce dépôt. Les retours d'expérience sont précieux pour faire avancer le projet.
 
 ### Puis-je contribuer au code ?
 
