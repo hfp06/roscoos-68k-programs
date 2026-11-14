@@ -70,6 +70,16 @@ préemption IRQ).
 
 ---
 
+## 🎬 Démonstration vidéo (7 min)
+
+[![Présentation roscoOS/68k](roscoOS%201.png)](https://github.com/hfp06/roscoos-68k-programs/releases/download/v0.9.7-video/RoscoOS-Basic.mp4)
+
+*Cliquez sur l'image pour télécharger et lancer la vidéo (MP4, 15 Mo).*
+
+⬇️ **[Télécharger la vidéo (MP4, 15 Mo)](https://github.com/hfp06/roscoos-68k-programs/releases/download/v0.9.7-video/RoscoOS-Basic.mp4)**
+
+---
+
 ## 🛠️ Mise à jour des ROMs (firmware)
 
 ### Pourquoi mettre à jour les ROMs ?
