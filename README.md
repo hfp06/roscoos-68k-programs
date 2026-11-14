@@ -4,8 +4,8 @@
 
 </div>
 
-##Un système d'exploitation complet pour la carte rosco_m68k**
-##A complete operating system for the rosco_m68k board**
+**Un système d'exploitation complet pour la carte rosco_m68k**
+**A complete operating system for the rosco_m68k board**
 
 
 
