@@ -1,4 +1,18 @@
-# roscoOS/68k — Programmes natifs (binaires)
+<div align="center">
+
+# roscoOS/68k
+
+**Un système d'exploitation complet pour la carte rosco_m68k**
+**A complete operating system for the rosco_m68k board**
+
+![Phase 1](https://img.shields.io/badge/Phase%201-Multit%C3%A2che%20coop%C3%A9ratif-brightgreen)
+![Phase 2](https://img.shields.io/badge/Phase%202-Multit%C3%A2che%20pr%C3%A9emptif-yellow)
+![License](https://img.shields.io/badge/License-MIT%20(binaires%20uniquement)-blue)
+![Platform](https://img.shields.io/badge/Platform-Motorola%2068000-orange)
+
+[Français](#-français) · [English](#-english) · [Démo vidéo](#-démonstration) · [FAQ](FAQ.md)
+
+</div>
 
 Programmes natifs prêts à l'emploi pour **roscoOS/68k**, l'OS maison pour la carte
 **ROSCO_M68K Classic v2.42** (MC68010 @ 10 ou 12 MHz).
