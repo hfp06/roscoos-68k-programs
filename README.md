@@ -294,15 +294,91 @@ Sans ces projets, roscoOS/68k n'existerait pas.
 | **Screenshots** | ✅ Publiés | MIT |
 | **Sources du kernel** (`roscoos.bin`, `sched.c`, etc.) | ⏳ Non publiées | — |
 
-**Pourquoi les sources du kernel ne sont pas publiées ?**
+---
 
-Le développement de roscoOS/68k est **actif et solo**. Publier les sources
-maintenant signifierait gérer une communauté (PRs, issues, forks) que je ne
-peux pas assumer en parallèle du développement.
+# FAQ — roscoOS/68k
 
-Les sources du kernel seront publiées dans une version future, **quand le
-projet sera stabilisé** (probablement en 1.0). En attendant, les binaires
-sont fournis **librement** (MIT) pour utilisation, test et modification.
+### Le projet est-il open source ?
+
+**Non, pas encore.** roscoOS/68k est un projet indépendant. Les **binaires** et la **documentation** sont mis à disposition de la communauté pour permettre à chacun de tester, utiliser et donner son avis sur le système. Le **code source du noyau n'est pas publié**.
+
+### Pourquoi ne pas publier les sources ?
+
+C'est un **choix de développement**, pas une faiblesse technique. Le noyau est en pleine maturation (passage du multitâche coopératif au multitâche préemptif). L'auteur souhaite en garder la maîtrise pendant cette phase pour garantir la cohérence et la qualité du projet.
+
+Une **publication éventuelle des sources** sera envisagée lorsque le projet aura atteint un niveau de maturité suffisant. Aucune date n'est fixée à ce jour.
+
+### Puis-je réutiliser les binaires ?
+
+**Oui.** Les binaires et la documentation sont distribués sous **licence MIT** (voir `LICENSE` et `LICENSE-CLARIFICATION.md`). Vous pouvez les utiliser, les modifier et les redistribuer, à condition de conserver la mention de licence.
+
+En revanche, la licence MIT **ne vous donne aucun droit sur le code source absent**.
+
+### Le dépôt s'appelle "roscoos-68k-programs", est-ce seulement une collection de programmes ?
+
+**Non.** Le nom du dépôt est historique, mais le contenu est bien celui d'un **système d'exploitation complet** : noyau, ordonnanceur, shell, BASIC, éditeur, gestion des périphériques. Les binaires publiés sont les **composants** de cet OS, pas des utilitaires isolés.
+
+### Sur quel matériel roscoOS/68k fonctionne-t-il ?
+
+Sur la carte **rosco_m68k** (processeur Motorola 68000), avec 4 Mo de RAM et l'extension de bus. Le projet est développé et testé sur cette configuration.
+
+### Quelle est la différence entre la Phase 1 et la Phase 2 ?
+
+- **Phase 1 — Multitâche coopératif** (opérationnel) : les tâches rendent volontairement la main au noyau pour permettre aux autres de s'exécuter.
+- **Phase 2 — Multitâche préemptif** (en développement) : le noyau reprend périodiquement le contrôle du processeur via une interruption et son ordonnanceur, sans coopération des tâches.
+
+### Comment signaler un bug ou proposer une amélioration ?
+
+Ouvrez une [issue](https://github.com/hfp06/roscoos-68k-programs/issues) sur ce dépôt. Les retours d'expérience sont précieux pour faire avancer le projet.
+
+### Puis-je contribuer au code ?
+
+Le code source n'étant pas publié, les contributions directes au noyau ne sont pas possibles pour l'instant. En revanche, les **retours d'utilisation**, les **rapports de bugs** et les **suggestions** sont les bienvenus et seront étudiés avec attention.
+
+---
+
+*English version of this FAQ will be added soon.*
+
+---
+
+# Clarification de la licence / License clarification
+
+## 🇫🇷 Français
+
+La licence **MIT** appliquée à ce dépôt (voir fichier `LICENSE`) couvre **exclusivement** :
+
+- les fichiers **binaires** publiés (par exemple `.bin`, `.rom`, images disque, etc.) ;
+- la **documentation** textuelle (README, manuels, notes).
+
+Elle **ne couvre pas** et **ne peut en aucun cas être interprétée comme couvrant** :
+
+- le **code source du noyau** de roscoOS/68k, qui n'est pas publié ;
+- les sources des outils internes, non publiées ;
+- toute éventuelle version future des sources, sauf mention contraire explicite.
+
+**La présence de la licence MIT ne constitue pas une offre de publication des sources.** Le noyau de roscoOS/68k reste la propriété intellectuelle de son auteur, qui conserve l'ensemble des droits sur celui-ci.
+
+Toute personne qui télécharge un binaire est libre de l'utiliser, de le modifier et de le redistribuer conformément à la licence MIT, **sans pour autant obtenir un quelconque droit sur le code source absent**.
+
+## 🇬🇧 English
+
+The **MIT** license applied to this repository (see `LICENSE` file) covers **exclusively**:
+
+- the published **binary** files (e.g. `.bin`, `.rom`, disk images, etc.);
+- the **documentation** (README, manuals, notes).
+
+It **does not cover**, and **shall in no way be construed as covering**:
+
+- the **roscoOS/68k kernel source code**, which is not published;
+- the sources of internal tools, which are not published;
+- any future source release, unless explicitly stated otherwise.
+
+**The presence of the MIT license does not constitute an offer to publish the source code.** The roscoOS/68k kernel remains the intellectual property of its author, who retains all rights to it.
+
+Anyone downloading a binary is free to use, modify and redistribute it in accordance with the MIT license, **without thereby acquiring any right over the absent source code**.
+
+---
+
 
 ## 🎯 Feuille de route
 
